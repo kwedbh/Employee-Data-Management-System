@@ -5,7 +5,7 @@
 
    This is a web based application that can help you manage the list of all your employees in your company.
 
-   This app comes with me features, such as:
+   This app comes with  features, such as:
 
 * Creating / editing / deleting of departments (Manage Department).
 * Creating / editing / deleting of employees (Manage Employee) .
