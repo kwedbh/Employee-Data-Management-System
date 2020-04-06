@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2020 at 02:15 PM
+-- Generation Time: Apr 06, 2020 at 06:18 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -47,7 +46,7 @@ CREATE TABLE `employees` (
   `department` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telephone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `salary` decimal(8,2) NOT NULL,
+  `salary` decimal(16,2) NOT NULL,
   `cover_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -79,17 +78,6 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(100, '2014_10_12_000000_create_users_table', 1),
-(101, '2014_10_12_100000_create_password_resets_table', 1),
-(102, '2019_08_19_000000_create_failed_jobs_table', 1),
-(103, '2020_03_31_132417_create_departments_table', 1),
-(104, '2020_03_31_133727_create_employees_table', 1);
 
 -- --------------------------------------------------------
 
@@ -188,7 +176,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
