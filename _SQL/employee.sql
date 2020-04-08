@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2020 at 06:18 PM
+-- Generation Time: Apr 08, 2020 at 11:00 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -94,6 +94,24 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment_reports`
+--
+
+CREATE TABLE `payment_reports` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `employee_id` bigint(20) UNSIGNED NOT NULL,
+  `salary` decimal(16,2) NOT NULL,
+  `amount_paid` decimal(16,2) NOT NULL,
+  `paid_by` bigint(20) UNSIGNED NOT NULL,
+  `remark` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `department` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -123,7 +141,8 @@ ALTER TABLE `departments`
 -- Indexes for table `employees`
 --
 ALTER TABLE `employees`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `employees_department_foreign` (`department`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -142,6 +161,14 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `payment_reports`
+--
+ALTER TABLE `payment_reports`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `payment_reports_employee_id_foreign` (`employee_id`),
+  ADD KEY `payment_reports_paid_by_foreign` (`paid_by`);
 
 --
 -- Indexes for table `users`
@@ -179,10 +206,33 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `payment_reports`
+--
+ALTER TABLE `payment_reports`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `employees`
+--
+ALTER TABLE `employees`
+  ADD CONSTRAINT `employees_department_foreign` FOREIGN KEY (`department`) REFERENCES `departments` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `payment_reports`
+--
+ALTER TABLE `payment_reports`
+  ADD CONSTRAINT `payment_reports_employee_id_foreign` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `payment_reports_paid_by_foreign` FOREIGN KEY (`paid_by`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
