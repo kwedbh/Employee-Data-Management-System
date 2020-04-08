@@ -141,7 +141,19 @@
                   <li class="nav-item"> <a class="nav-link" href="{{ route('employee.index') }}">Manage Employee</a></li>
                 </ul>
               </div>
-            </li>                                    
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#payment_report" aria-expanded="false" aria-controls="payment_report">
+                <span class="menu-title">Payment Reports</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-account-multiple"></i>
+              </a>
+              <div class="collapse" id="payment_report">
+                <ul class="nav flex-column sub-menu">              
+                  <li class="nav-item"> <a class="nav-link" href="{{ route('report.index') }}">Check Report </a></li>
+                </ul>
+              </div>
+            </li>                                                 
           </ul>
         </nav>
         <!-- partial -->

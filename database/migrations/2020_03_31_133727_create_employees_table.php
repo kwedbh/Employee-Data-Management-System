@@ -23,6 +23,10 @@ class CreateEmployeesTable extends Migration
             $table->string('cover_image');
             $table->timestamps();
         });
+
+        Schema::table('employees', function($table) {
+            $table->foreign('department')->references('name')->on('departments')->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**

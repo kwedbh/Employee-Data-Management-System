@@ -43,13 +43,14 @@ $base =  basename($_SERVER['PHP_SELF']);
                           <th scope="col">Telephone</th>
                           <th scope="col">Salary</th>
                           <th scope="col">&nbsp;</th>
+                          <th scope="col">&nbsp;</th>
                           </tr>
                         </thead>
                         <tbody>
                         @foreach($employee AS $args)                        
                           <tr>
                           <td>
-                              <img src="{{asset('storage/cover_images/'.$args->cover_image)}}" class="mr-2 img-fluid" onError="this.onerror=null;this.src='{{asset('/img/noimage.jpg')}}';" alt="image"> {{ $args->name }}
+                              <img src="{{asset('storage/cover_images/'.$args->cover_image)}}" class="mr-2 img-fluid" onError="this.onerror=null;this.src='{{asset('/img/noimage.jpg')}}';" alt="{{ $args->name }}"> {{ $args->name }}
                             </td>
                             <td> <label class="badge badge-gradient-success">{{ $args->department }} </label></td>
                             <td>
@@ -57,6 +58,7 @@ $base =  basename($_SERVER['PHP_SELF']);
                             </td>
                             <td>  {{ $args->telephone }} </td>
                             <td>  {{ config('app.curr') }}<?php print number_format($args->salary,2) ?> </td>
+                            <td> <a href="{{ route('employee.pay',$args->id) }}">Pay Now</a> </td> 
                             <td>                           <a class="float-left" href="{{ route('employee.edit',$args->id) }}">
                           <i class=" mdi mdi-grease-pencil " style="font-size:20px;"></i>
                           </a>

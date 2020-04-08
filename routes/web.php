@@ -53,16 +53,29 @@ Route::get("/employee/edit/{id}","EmployeeController@edit")->name("employee.edit
 
 Route::get("/employee/delete/{id}","EmployeeController@show")->name("employee.delete");
 
+Route::get("/employee/pay/{id}","EmployeeController@pay")->name("employee.pay");
+
 //Post Request
 Route::post("/employee/create","EmployeeController@store");
 
 Route::post("/employee/edit/{id}","EmployeeController@update_record")->name("employee.edit");
+
+Route::post("/employee/pay/{id}","PaymentReportController@create");
 
 // Delete
 
 Route::delete("/employee/delete/{id}","EmployeeController@destroy");
 
 // End of Department
+
+//Start of Payment Report
+
+//Get
+Route::get("/report","PaymentReportController@index")->name('report.index');
+
+
+//Post
+Route::post("/report","PaymentReportController@show");
 
 
 

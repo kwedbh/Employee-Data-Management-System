@@ -24,6 +24,10 @@ class EmployeeController extends Controller
     public function create()
     {
         $department = Department::all();
+        
+        if(count($department) <  1){
+            return redirect("/department")->with("error","You must create a department before creating an employee");
+       }
         return view("employee.create",['department' => $department]);
     }
 
@@ -146,4 +150,11 @@ class EmployeeController extends Controller
 
         return view('employee.single',['employee' => $employee,'department' => $department]);
     }
+
+    public function pay($id)
+    {
+        $department = Department::orderBy('name') -> get();
+        $employee = Employee::findOrFail($id);
+        return view("employee.pay",['employee' => $employee,'department' => $department]);
+    }    
 }
