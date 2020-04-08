@@ -146,7 +146,7 @@
               <a class="nav-link" data-toggle="collapse" href="#payment_report" aria-expanded="false" aria-controls="payment_report">
                 <span class="menu-title">Payment Reports</span>
                 <i class="menu-arrow"></i>
-                <i class="mdi mdi-account-multiple"></i>
+                <i class="mdi mdi-calendar-clock"></i>
               </a>
               <div class="collapse" id="payment_report">
                 <ul class="nav flex-column sub-menu">              

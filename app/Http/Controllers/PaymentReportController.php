@@ -102,14 +102,11 @@ class PaymentReportController extends Controller
           
            foreach($report AS $args):
 
-            // var_dump($args->user->name);
-             print_r($args->reports);
-
             $output.='
             <tr>
             <td>'.htmlspecialchars($args->employee->name).'</td>  
-            <td>'.htmlspecialchars($args->salary).'</td>
-            <td>'.htmlspecialchars($args->amount_paid).'</td> 
+            <td>'.htmlspecialchars(config("app.curr").$args->salary).'</td>
+            <td>'.htmlspecialchars(config("app.curr").$args->amount_paid).'</td> 
             <td>'.htmlspecialchars($args->department).'</td>
             <td>'.htmlspecialchars($args->remark).'</td>
             <td>'.htmlspecialchars($args->created_at).'</td>

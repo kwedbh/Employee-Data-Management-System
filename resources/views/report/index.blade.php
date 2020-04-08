@@ -71,6 +71,8 @@
     <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST'):?>
 
+  <!-- Output Can be found under PaymentReportController -->
+
         <?php print $output ?>
       
       <?php endif;?>
