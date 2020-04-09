@@ -6,7 +6,8 @@
    This is a web based application that can help you manage the list of all your employees in your company.
 
    This app comes with  features, such as:
-
+ 
+* Viewing of employee payments history.
 * Creating / editing / deleting of departments (Manage Department).
 * Creating / editing / deleting of employees (Manage Employee) .
 * Creating of new admins to manage the app .
@@ -47,7 +48,7 @@ What things you need to install the software and how to install them
 ## Built With
 
 * [Laravel 7.3.0](https://laravel.com/docs/routing) - The web framework used
-* [BootStrapDash](https://BootstrapDash/PurpleAdmin-Free-Admin-Template) - Template used
+* [BootStrapDash](https://www.bootstrapdash.com/demo/purple-admin-free/) - Template used
 
 ## Contributing
 
