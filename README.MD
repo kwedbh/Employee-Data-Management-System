@@ -55,7 +55,7 @@ What things you need to install the software and how to install them
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## Links
-- Website：[https://kwed.website](https://kwed.website)   
+- Website：[https://kwed.ng](https://kwed.ng)   
 - GitHub：[https://github.com/kwedbh/Employee-data-management-system](https://github.com/kwedbh/Employee-data-management-system)   
 - Email：[kwedng@gmail.com](kwedng@gmail.com) / [kingsleywilliamsdaniel@gmail.com](kingsleywilliamsdaniel@gmail.com)  
 - Facebook：[https://fb.com/kwedbh](https://fb.com/kwedbh)    
